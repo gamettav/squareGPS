@@ -1,0 +1,21 @@
+{
+   "header": {
+      "test-task": "Test Task",
+      "task-nav-option": "Task",
+      "map-nav-option": "Map"
+   },
+   "alert": {
+      "address-unable-to-geocode": "Address is unable to reverse geocode"
+   },
+   "marker": {
+      "id": "Id",
+      "lat": "lat",
+      "lng": "lng",
+      "address": "Address",
+      "plural": "Markers"
+   },
+   "actions": {
+      "remove": "Remove"
+   },
+   "task": {}
+}

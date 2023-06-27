@@ -1,0 +1,23 @@
+@font-face {
+   font-family: GTAmerica;
+   src: local("GTAmerica"),
+      url("/fonts/GT-America/GT-America-Extended-Regular-Trial.otf")
+         format("truetype");
+}
+
+@font-face {
+   font-family: GTAmericaExp;
+   src: local("GTAmericaExp"),
+      url("/fonts/GT-America/GT-America-Expanded-Regular-Trial.otf")
+         format("truetype");
+}
+@font-face {
+   font-family: GTAmericaExpMd;
+   src: local("GTAmericaExpMd"),
+      url("/fonts/GT-America/GT-America-Expanded-Medium-Trial.otf")
+         format("truetype");
+}
+
+* {
+   font-family: "GTAmerica", Helvetica, Arial !important;
+}

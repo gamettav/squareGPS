@@ -1,0 +1,21 @@
+{
+   "header": {
+      "test-task": "Тестовое задание",
+      "task-nav-option": "Задание",
+      "map-nav-option": "Карта"
+   },
+   "alert": {
+      "address-unable-to-geocode": "Адрес невозможно геокодировать"
+   },
+   "marker": {
+      "id": "Id",
+      "lat": "lat",
+      "lng": "lng",
+      "address": "Адрес",
+      "plural": "Маркеры"
+   },
+   "actions": {
+      "remove": "Удалить"
+   },
+   "task": {}
+}
