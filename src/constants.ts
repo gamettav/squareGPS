@@ -11,10 +11,10 @@ export const DEFAULT_MARKERLIST: Marker[] = [
 ];
 export const DEFAULT_MARKER_ID_TO_CENTER = 1;
 
-// Local storage
+// Local storage keys
 
-export const LOCAL_STORAGE_MARKERLIST_KEY: string = "markerList";
-export const LOCAL_STORAGE_LANG_KEY: string = "lang";
+export const LOCAL_STORAGE_MARKERLIST_KEY = "markerList";
+export const LOCAL_STORAGE_LANG_KEY = "lang";
 
 // Provide / inject keys
 

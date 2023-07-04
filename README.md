@@ -1,4 +1,4 @@
-# SquareGPS test task
+# SquareGPS task
 
 This project is a web application built with Vue.js that consists of two main routes: Task and Map. The Task route displays the details of a specific task, while the Map route showcases a map component with markers and a marker list on the sidebar.
 

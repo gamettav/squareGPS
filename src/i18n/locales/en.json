@@ -17,5 +17,37 @@
    "actions": {
       "remove": "Remove"
    },
-   "task": {}
+   "example": "Example",
+   "view-specific": {
+      "task": {
+         "title": "SquareGPS Task",
+         "descr": "You need to develop an application using Vue.js, Vuex, VueRouter, and Vuetify. The application header should contain a menu with 2 items: 'Task' and 'Map'.",
+         "sections": {
+            "first": {
+               "title": "Section 'Task'",
+               "descr": "This section should contain the text of this task, styled similarly."
+            },
+            "second": {
+               "title": "Section 'Map'",
+               "descr": "The screen should display a map and a list:",
+               "list": [
+                  "When the add button is clicked, the map should enter marker adding mode: a marker should appear at the clicked location, and a record with the address should be added to the list. If the address is not found, an error should be displayed and the marker should not be added to the list. Any free geocoding API can be used for address search, for example: {link}",
+                  "When a marker is clicked, the corresponding record in the list should be highlighted",
+                  "When a record in the list is clicked, the map should center on the marker",
+                  "Markers should be stored locally and should not disappear after page reload",
+                  "The selected marker's ID should be displayed in the address bar"
+               ]
+            },
+            "third": {
+               "descr": "Local data storage should be organized as a service that emulates a backend (You need to create a Backend class that pseudo-asynchronously saves data in localStorage). Additionally:",
+               "list": [
+                  "Consider the display on mobile devices",
+                  "Provide localization support",
+                  "Write 1 unit test for any component using Jest"
+               ]
+            }
+         },
+         "reminder": "Reminder: The purpose of this test task is to demonstrate your ability to write good modular code and effectively use the specified technologies, and more. Be proud of this code."
+      }
+   }
 }

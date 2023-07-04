@@ -28,25 +28,18 @@ import { getMarkers, getLanguage } from "@src/server/asynclocalStorage";
 import type { Locales, Marker } from "@src/types";
 
 export default {
-   [GET_MARKET_LIST]({ dispatch }) {
-      getMarkers().then((savedMarkers) => {
-         if (savedMarkers) {
-            const parsedMarkerList = JSON.parse(savedMarkers);
-            if (parsedMarkerList && parsedMarkerList.length !== 0) {
-               dispatch(SET_MARKER_LIST, parsedMarkerList);
-            } else {
-               dispatch(SET_MARKER_LIST, []);
-            }
-         } else {
-            dispatch(SET_MARKER_LIST, DEFAULT_MARKERLIST);
-         }
-      });
+   async [GET_MARKET_LIST]({ dispatch }) {
+      try {
+         const savedMarkers = await getMarkers();
+         dispatch(SET_MARKER_LIST, savedMarkers || DEFAULT_MARKERLIST);
+      } catch (error) {}
    },
 
-   [GET_LANGUAGE]({ dispatch }) {
-      getLanguage().then((savedLanguage) => {
-         if (savedLanguage) dispatch(SET_LANGUAGE, savedLanguage);
-      });
+   async [GET_LANGUAGE]({ dispatch }) {
+      try {
+         const savedLanguage = await getLanguage();
+         dispatch(SET_LANGUAGE, savedLanguage);
+      } catch (error) {}
    },
 
    [SET_MARKER_LIST]({ commit }, markerList: Marker[]) {
@@ -67,12 +60,16 @@ export default {
       }
    },
 
-   [ADD_MARKER]({ dispatch }, newMarker: Marker) {
-      getAddress(newMarker.lat, newMarker.lng)
-         .then((address) =>
-            dispatch(ADD_MARKER_TO_LIST, { ...newMarker, address })
-         )
-         .catch((error) => dispatch(ADD_ERROR, error));
+   async [ADD_MARKER]({ dispatch }, newMarker: Marker) {
+      try {
+         const address = await getAddress({
+            lat: newMarker.lat,
+            lng: newMarker.lng,
+         });
+         dispatch(ADD_MARKER_TO_LIST, { ...newMarker, address });
+      } catch (error) {
+         dispatch(ADD_ERROR, error);
+      }
    },
 
    [ADD_ERROR]({ commit }, error: Error) {
